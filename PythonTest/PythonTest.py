@@ -43,7 +43,7 @@ def calculate_CGPA(firstScore):
 input_list = []
 
 #read data from input file and update input_list
-with open(r'INPUT_TEST.csv') as csvInput:
+with open('INPUT_TESTUPDATE.csv') as csvInput:
     csv_reader = csv.reader(csvInput)
     columns = len(next(csv_reader)) #counts the number of columns in csv file
     csvInput.seek(0)
