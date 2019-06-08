@@ -66,7 +66,7 @@ with open('INPUT_TESTUPDATE.csv') as csvInput:
             if int(r) <= 2: #to skip the first 3 columns which aren't needed
                 continue
             else:
-                grade = score_grade(int(line[r]))
+                grade = score_grade(int(float(line[r])))
                 coursegp = calculate_CGPA(grade)
                 cgpa_list.append(coursegp)
                 unit += 3
