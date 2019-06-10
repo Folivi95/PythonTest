@@ -43,7 +43,7 @@ def calculate_CGPA(firstScore):
 input_list = []
 
 #read data from input file and update input_list
-with open('INPUT_TESTUPDATE.csv') as csvInput:
+with open('INPUT_TESTUPDATE.csv', 'r') as csvInput:
     csv_reader = csv.reader(csvInput)
     columns = len(next(csv_reader)) #counts the number of columns in csv file
     csvInput.seek(0)
@@ -66,7 +66,7 @@ with open('INPUT_TESTUPDATE.csv') as csvInput:
             if int(r) <= 2: #to skip the first 3 columns which aren't needed
                 continue
             else:
-                grade = score_grade(int(float(line[r])))
+                grade = score_grade(int(float(line[r].strip())))
                 coursegp = calculate_CGPA(grade)
                 cgpa_list.append(coursegp)
                 unit += 3
@@ -79,5 +79,4 @@ with open('INPUT_TESTUPDATE.csv') as csvInput:
         csv_writer = csv.writer(csvOutput, delimiter=',')
         for line in input_list:
             csv_writer.writerow(line)
-        
-        
+       
